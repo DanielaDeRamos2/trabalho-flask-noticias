@@ -47,3 +47,79 @@ body {
         background-color: transparent;
     }
 }
+.noticias {
+    a {
+        text-decoration: none;
+        font-size: 35px;
+        color: $mainColor;
+        font-weight: bold;
+    }
+    &-principal {
+        display: flex;
+        flex-direction: column;
+        .imagem {
+            border-radius: 20px;
+        }
+    }
+}
+
+.noticias-listagem {
+    a {
+        text-decoration: none;
+        font-size: 25px;
+        color: $mainColor;
+        font-weight: bold;
+    }
+    .imagem-card {
+        width: 100%;
+        border-radius: 10px;
+    }
+    .card-noticia {
+        border-radius: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+        margin-bottom: 20px;
+        width: 420px;
+    }
+}
+
+.crud {
+    form {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+    }
+    label {
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    button {
+        width: 80px;
+    }
+}
+
+.listagem-noticias {
+    .botao-criar {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .criar {
+        width: fit-content;
+        text-decoration: none;
+        padding: 15px;
+        background-color: $mainColor;
+        color: $fontColor;
+    }
+    .lista {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .titulo{
+
+        }
+        .botoes {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+}

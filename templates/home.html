@@ -19,19 +19,46 @@
                             Página Principal
                         </a>
                         <a href="/noticias">
-                            Notícias
+                            Ver Notícias
                         </a>
-                        <a href="/criar">
-                            Criar ou editar notícias
+                        <a href="/listar-noticias">
+                            Editar Notícias
                         </a>
                     </div>
                     <div class="pesquisa">
                         <form action="">
-                            <input type="text" placeholder="Pesquisar" class="input-pesquisa">
-                            <button class="botao" id="togglePesquisa"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <input type="text" placeholder="Pesquisar notícias" class="input-pesquisa">
+                            <button class="botao"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+    {% endblock %}
+    {% block noticias %}
+    <section class="noticias mt-5">
+        <div class="container">
+            <h2 class="text-center">Notícias recentes</h2>
+            <div class="row mt-5 d-flex align-items-center">
+                <div class="col-6 noticias-principal">
+                    <img src="https://picsum.photos/500/300" alt="Imagem aleatória" class="imagem">
+                    <a class="titulo" href="#">Título da notícia</a>
+                    <p class="descricao">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, error architecto distinctio exercitationem neque quos? Enim voluptate animi nisi officia quisquam, at totam incidunt deleniti commodi tenetur impedit beatae vero.</p>
+                </div>
+                <div class="col-6 noticias-secundarias">
+                    <a class="titulo" href="#">Título notícia 1</a>
+                    <p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus assumenda obcaecati illo hic totam! Id inventore recusandae consectetur quisquam sint itaque maxime consequatur dolores fugit quia, modi consequuntur, rerum dolor. 1</p>
+                    <a class="titulo" href="#">Título notícia 2</a>
+                    <p class="descricao">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores nisi, assumenda est facere, recusandae fuga, enim quibusdam quisquam perferendis dolorem quos repellendus et accusamus magnam dicta laborum asperiores ut. Inventore.</p>
+                    <a class="titulo" href="#">Título notícia 3</a>
+                    <p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus assumenda obcaecati illo hic totam! Id inventore recusandae consectetur quisquam sint itaque maxime consequatur dolores fugit quia, modi consequuntur, rerum dolor. 3</p>
+                    <a class="titulo" href="#">Título notícia 4</a>
+                    <p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus assumenda obcaecati illo hic totam! Id inventore recusandae consectetur quisquam sint itaque maxime consequatur dolores fugit quia, modi consequuntur, rerum dolor. 4</p>
+                </div>
+            </div>
+            <div class="ver-mais text-center mt-5">
+                <a href="#"><i class="fa-solid fa-arrow-right"></i> Ver mais notícias</a>
             </div>
         </div>
     </section>
