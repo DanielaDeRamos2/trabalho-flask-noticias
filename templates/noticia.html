@@ -1,0 +1,45 @@
+{% extends "home.html" %}
+{% block noticias%}
+<section class="pagina-noticia">
+    <div class="container">
+        <div class="row">
+             <h2 class="titulo text-center  mt-5 mb-5">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sequi, saepe exercitationem? Iusto a ratione, rem commodi placeat aliquam consequuntur quisquam deleniti eos facere, minima dicta corporis non quia unde fugit?</h2>
+            <div class="col-12 text-center">
+                <img src="https://picsum.photos/1200/500" alt="" class="imagem">
+            </div>
+            <div class="col-12 mt-5">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam impedit quae, tenetur vel quo numquam tempore saepe, voluptates, praesentium aspernatur nobis dignissimos maiores asperiores voluptatibus possimus ipsam veniam enim perferendis! Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, aliquid similique? Assumenda natus unde voluptas a accusantium, quis porro iusto. Laboriosam optio laborum obcaecati voluptatibus ab ipsam quasi! Reiciendis, optio. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, cum non ullam amet nulla consectetur, numquam laborum assumenda totam, libero eius reiciendis doloremque fugiat eligendi nobis voluptatibus corrupti quam quod? Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur corporis dolores possimus nostrum adipisci quasi dicta. Asperiores veniam ipsa quas ipsam quis blanditiis architecto quod molestiae odio suscipit? Atque, tempore! Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste eligendi eveniet enim, voluptate consequatur perspiciatis minima quidem labore provident ex nesciunt quaerat porro ipsum perferendis quisquam, eaque, quasi voluptatibus! Deleniti? Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur commodi cumque iure placeat illo quam accusantium rerum at ipsa atque quos culpa dicta libero, minima error fuga non harum vero! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae, provident odit expedita velit odio eaque quisquam cupiditate laborum! Quia error praesentium quaerat ducimus odit ut nostrum voluptatibus? Assumenda, voluptate quaerat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem nam impedit dolores voluptates? Sequi beatae ab commodi ipsa ducimus ipsam, nisi quis provident laborum tempore ea numquam obcaecati iusto illo. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, sapiente ducimus, quasi minima inventore ipsam temporibus eveniet eius nesciunt tempora magnam nam. Ex corporis ipsa impedit deserunt amet, modi ea! Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio numquam, commodi itaque fuga cupiditate nobis reprehenderit. Quod, consequuntur, fugiat quos dicta nostrum recusandae sapiente atque error eveniet mollitia blanditiis facere.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="comentarios mt-5 mb-5">
+    <div class="container">
+        <h3 class="text-center mb-4">Comentários</h3>
+
+        <!-- Formulário -->
+        <form class="comentario-form mb-4">
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome:</label>
+                <input type="text" id="nome" class="form-control" placeholder="Seu nome">
+            </div>
+            <div class="mb-3">
+                <label for="comentario" class="form-label">Comentário:</label>
+                <textarea id="comentario" class="form-control" rows="3" placeholder="Escreva seu comentário..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+
+        <div class="lista-comentarios">
+            <div class="comentario p-3 mb-3">
+                <strong>Maria:</strong>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum ratione, animi maiores placeat vel aliquid voluptate id iusto nam, minima, minus accusantium. Libero consequatur sunt explicabo labore? Quae, mollitia inventore?</p>
+            </div>
+            <div class="comentario p-3 mb-3">
+                <strong>João:</strong>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea quos quasi animi nesciunt, totam ut et sequi hic reiciendis, eum sit odio unde fugiat, earum qui veniam obcaecati numquam. Unde.</p>
+            </div>
+        </div>
+    </div>
+</section>
+{%endblock%}

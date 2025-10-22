@@ -80,6 +80,27 @@ body {
         margin-right: 10px;
         margin-bottom: 20px;
         width: 420px;
+        .views{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            p {
+                margin: 0 !important;
+            }
+            .contagem {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                p {
+                    margin: 0 !important;
+                }
+                i {
+                    margin-right: 5px;
+                    margin-top: 2px;
+                }
+            }
+        }
     }
 }
 
@@ -99,6 +120,9 @@ body {
 }
 
 .listagem-noticias {
+    hr {
+        margin-top: 10px;
+    }
     .botao-criar {
         display: flex;
         justify-content: flex-end;
@@ -115,11 +139,51 @@ body {
         justify-content: space-between;
         align-items: center;
         .titulo{
-
+            p {
+                margin-bottom: 0 !important;
+                font-size: 20px;
+            }
         }
         .botoes {
             display: flex;
             justify-content: flex-end;
+            .btn-deletar{
+                border: 0;
+                border-radius: 10px;
+                background-color: rgb(225, 91, 91);
+                padding: 10px;
+            }
+            .btn-editar{
+                border: 0;
+                border-radius: 10px;
+                background-color: rgb(146, 223, 154);
+                padding: 10px;
+            }
         }
     }
 }
+.pagina-noticia {
+    .imagem {
+        width: 100%;
+    }
+}
+
+.comentarios {
+    padding: 30px 0;
+}
+
+.comentario-form {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.lista-comentarios .comentario {
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.lista-comentarios .comentario p {
+    margin-bottom: 0;
+}
+

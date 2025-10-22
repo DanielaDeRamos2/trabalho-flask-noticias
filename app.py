@@ -17,6 +17,10 @@ def criarNoticias():
 @app.route('/listar-noticias')
 def listarNoticias():
     return render_template('listar-noticias.html')
+
+@app.route('/noticia')
+def noticia():
+    return render_template('noticia.html')
     
 
 if __name__ == '__main__':
