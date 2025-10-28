@@ -8,3 +8,7 @@ activate
 cd ..
 cd ..
 pip install flask
+
+
+pip install pymysql
+pip install werkzeug
