@@ -4,95 +4,25 @@
     <div class="container">
         <div class="row">
             <h2 class="text-center mt-5 mb-5">Todas as notícias</h2>
-            <div class="col-4 card-noticia">
-                <img src="https://picsum.photos/500/300" alt="Imagem card" class="imagem-card">
+
+            {% for n in noticias %}
+            <div class="col-4 card-noticia mb-4">
+                <img src="{{ url_for('static', filename='imgs/' ~ n['img']) if n['img'] else 'https://picsum.photos/500/300' }}" 
+                     alt="Imagem da notícia" class="imagem-card">
                 <div class="views">
-                    <p>Categoria: SEI LA</p>
+                    <p>Categoria: {{ n['categoria'] or 'Sem categoria' }}</p>
                     <div class="contagem">
-                        <i class="fa-regular fa-eye"></i><p>  120</p>
+                        <i class="fa-regular fa-eye"></i>
+                        <p>{{ n['views'] or 0 }}</p>
                     </div>
                 </div>
-                <a href="#" class="titulo-card">Notícia 1</a>
-                <p class="descricao-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet omnis placeat libero dicta minus soluta iusto quasi adipisci tempore ratione ad harum culpa in, error alias sint architecto dolores voluptatibus.</p>
+                <a href="#" class="titulo-card">{{ n['titulo'] }}</a>
+                <p class="descricao-card">{{ n['descricao'] }}</p>
             </div>
-            <div class="col-4 card-noticia">
-                <img src="https://picsum.photos/500/300" alt="Imagem card" class="imagem-card">
-                <div class="views">
-                    <p>Categoria: SEI LA</p>
-                    <div class="contagem">
-                        <i class="fa-regular fa-eye"></i><p>  120</p>
-                    </div>
-                </div>
-                <a href="#" class="titulo-card">Notícia 1</a>
-                <p class="descricao-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet omnis placeat libero dicta minus soluta iusto quasi adipisci tempore ratione ad harum culpa in, error alias sint architecto dolores voluptatibus.</p>
-            </div>
-             <div class="col-4 card-noticia">
-                <img src="https://picsum.photos/500/300" alt="Imagem card" class="imagem-card">
-                <div class="views">
-                    <p>Categoria: SEI LA</p>
-                    <div class="contagem">
-                        <i class="fa-regular fa-eye"></i><p>  120</p>
-                    </div>
-                </div>
-                <a href="#" class="titulo-card">Notícia 1</a>
-                <p class="descricao-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet omnis placeat libero dicta minus soluta iusto quasi adipisci tempore ratione ad harum culpa in, error alias sint architecto dolores voluptatibus.</p>
-            </div>
-             <div class="col-4 card-noticia">
-                <img src="https://picsum.photos/500/300" alt="Imagem card" class="imagem-card">
-                <div class="views">
-                    <p>Categoria: SEI LA</p>
-                    <div class="contagem">
-                        <i class="fa-regular fa-eye"></i><p>  120</p>
-                    </div>
-                </div>
-                <a href="#" class="titulo-card">Notícia 1</a>
-                <p class="descricao-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet omnis placeat libero dicta minus soluta iusto quasi adipisci tempore ratione ad harum culpa in, error alias sint architecto dolores voluptatibus.</p>
-            </div>
-             <div class="col-4 card-noticia">
-                <img src="https://picsum.photos/500/300" alt="Imagem card" class="imagem-card">
-                <div class="views">
-                    <p>Categoria: SEI LA</p>
-                    <div class="contagem">
-                        <i class="fa-regular fa-eye"></i><p>  120</p>
-                    </div>
-                </div>
-                <a href="#" class="titulo-card">Notícia 1</a>
-                <p class="descricao-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet omnis placeat libero dicta minus soluta iusto quasi adipisci tempore ratione ad harum culpa in, error alias sint architecto dolores voluptatibus.</p>
-            </div>
-             <div class="col-4 card-noticia">
-                <img src="https://picsum.photos/500/300" alt="Imagem card" class="imagem-card">
-                <div class="views">
-                    <p>Categoria: SEI LA</p>
-                    <div class="contagem">
-                        <i class="fa-regular fa-eye"></i><p>  120</p>
-                    </div>
-                </div>
-                <a href="#" class="titulo-card">Notícia 1</a>
-                <p class="descricao-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet omnis placeat libero dicta minus soluta iusto quasi adipisci tempore ratione ad harum culpa in, error alias sint architecto dolores voluptatibus.</p>
-            </div>
-             <div class="col-4 card-noticia">
-                <img src="https://picsum.photos/500/300" alt="Imagem card" class="imagem-card">
-                <div class="views">
-                    <p>Categoria: SEI LA</p>
-                    <div class="contagem">
-                        <i class="fa-regular fa-eye"></i><p>  120</p>
-                    </div>
-                </div>
-                <a href="#" class="titulo-card">Notícia 1</a>
-                <p class="descricao-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet omnis placeat libero dicta minus soluta iusto quasi adipisci tempore ratione ad harum culpa in, error alias sint architecto dolores voluptatibus.</p>
-            </div>
-             <div class="col-4 card-noticia">
-                <img src="https://picsum.photos/500/300" alt="Imagem card" class="imagem-card">
-                <div class="views">
-                    <p>Categoria: SEI LA</p>
-                    <div class="contagem">
-                        <i class="fa-regular fa-eye"></i><p>  120</p>
-                    </div>
-                </div>
-                <a href="#" class="titulo-card">Notícia 1</a>
-                <p class="descricao-card">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet omnis placeat libero dicta minus soluta iusto quasi adipisci tempore ratione ad harum culpa in, error alias sint architecto dolores voluptatibus.</p>
-            </div>
-            
+            {% else %}
+            <p class="text-center">Nenhuma notícia cadastrada.</p>
+            {% endfor %}
+
         </div>
     </div>
 </section>
