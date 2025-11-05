@@ -93,3 +93,23 @@ class Noticia:
                 return resultado
         finally:
             conn.close()
+
+
+    def buscarPorId(self, id):
+        conn = self.conectar()
+        try:
+            with conn.cursor() as cursor:
+                cursor.execute("SELECT * FROM noticia WHERE id = %s", (id,))
+                return cursor.fetchone()
+        finally:
+            conn.close()
+
+
+    def incrementar_views(self, id):
+        conn = self.conectar()
+        try:
+            with conn.cursor() as cursor:
+                cursor.execute("UPDATE noticia SET views = views + 1 WHERE id = %s", (id,))
+            conn.commit()
+        finally:
+            conn.close()

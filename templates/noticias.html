@@ -6,23 +6,29 @@
             <h2 class="text-center mt-5 mb-5">Todas as notícias</h2>
 
             {% for n in noticias %}
-            <div class="col-4 card-noticia mb-4">
-                <img src="{{ url_for('static', filename='imgs/' ~ n['img']) if n['img'] else 'https://picsum.photos/500/300' }}" 
-                     alt="Imagem da notícia" class="imagem-card">
-                <div class="views">
-                    <p>Categoria: {{ n['categoria'] or 'Sem categoria' }}</p>
-                    <div class="contagem">
-                        <i class="fa-regular fa-eye"></i>
-                        <p>{{ n['views'] or 0 }}</p>
+            <div class="col-12 col-md-4 card-noticia mb-4">
+                <a href="{{ url_for('noticia', id=n['id']) }}">
+                    <img src="{{ url_for('static', filename='imgs/' ~ n['img']) if n['img'] else 'https://picsum.photos/500/300' }}" 
+                         alt="Imagem da notícia" class="imagem-card img-fluid">
+                </a>
+
+                <div class="views mt-2 d-flex justify-content-between align-items-center">
+                    <p class="mb-0">Categoria: {{ n['categoria'] or 'Sem categoria' }}</p>
+                    <div class="contagem d-flex align-items-center">
+                        <i class="fa-regular fa-eye me-1"></i>
+                        <p class="mb-0">{{ n['views'] or 0 }}</p>
                     </div>
                 </div>
-                <a href="#" class="titulo-card">{{ n['titulo'] }}</a>
-                <p class="descricao-card">{{ n['descricao'] }}</p>
+
+                <a href="{{ url_for('noticia', id=n['id']) }}" class="titulo-card d-block mt-2">
+                    {{ n['titulo'] }}
+                </a>
+
+                <p class="descricao-card mt-2">{{ n['descricao'] }}</p>
             </div>
             {% else %}
             <p class="text-center">Nenhuma notícia cadastrada.</p>
             {% endfor %}
-
         </div>
     </div>
 </section>

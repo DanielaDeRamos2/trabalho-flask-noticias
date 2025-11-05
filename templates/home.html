@@ -26,8 +26,8 @@
                         </a>
                     </div>
                     <div class="pesquisa">
-                        <form action="">
-                            <input type="text" placeholder="Pesquisar notícias" class="input-pesquisa">
+                        <form action="/buscar-noticia" method="get">
+                            <input type="text" name="titulo" placeholder="Pesquisar notícias" class="input-pesquisa">
                             <button class="botao"><i class="fa-solid fa-magnifying-glass"></i></button>
                         </form>
                     </div>
@@ -37,32 +37,48 @@
     </section>
     {% endblock %}
     {% block noticias %}
-    <section class="noticias mt-5">
-        <div class="container">
-            <h2 class="text-center">Notícias recentes</h2>
-            <div class="row mt-5 d-flex align-items-center">
+<section class="noticias mt-5">
+    <div class="container">
+        <h2 class="text-center">Notícias recentes</h2>
+        <div class="row mt-5 d-flex align-items-center">
+
+            {% if noticias and noticias|length > 0 %}
                 <div class="col-6 noticias-principal">
-                    <img src="https://picsum.photos/500/300" alt="Imagem aleatória" class="imagem">
-                    <a class="titulo" href="/noticia">Título da notícia</a>
-                    <p class="descricao">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores, error architecto distinctio exercitationem neque quos? Enim voluptate animi nisi officia quisquam, at totam incidunt deleniti commodi tenetur impedit beatae vero.</p>
+                    <img src="{{ url_for('static', filename='imgs/' ~ noticias[0]['img']) if noticias[0]['img'] else 'https://picsum.photos/500/300' }}" 
+                         alt="Imagem aleatória" class="imagem">
+                    <a class="titulo" href="{{ url_for('noticia', id=noticias[0]['id']) }}">
+                        {{ noticias[0]['titulo'] }}
+                    </a>
+                    <p class="descricao">
+                        {{ noticias[0]['descricao'] }}
+                    </p>
                 </div>
+
                 <div class="col-6 noticias-secundarias">
-                    <a class="titulo" href="#">Título notícia 1</a>
-                    <p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus assumenda obcaecati illo hic totam! Id inventore recusandae consectetur quisquam sint itaque maxime consequatur dolores fugit quia, modi consequuntur, rerum dolor. 1</p>
-                    <a class="titulo" href="#">Título notícia 2</a>
-                    <p class="descricao">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores nisi, assumenda est facere, recusandae fuga, enim quibusdam quisquam perferendis dolorem quos repellendus et accusamus magnam dicta laborum asperiores ut. Inventore.</p>
-                    <a class="titulo" href="#">Título notícia 3</a>
-                    <p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus assumenda obcaecati illo hic totam! Id inventore recusandae consectetur quisquam sint itaque maxime consequatur dolores fugit quia, modi consequuntur, rerum dolor. 3</p>
-                    <a class="titulo" href="#">Título notícia 4</a>
-                    <p class="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus assumenda obcaecati illo hic totam! Id inventore recusandae consectetur quisquam sint itaque maxime consequatur dolores fugit quia, modi consequuntur, rerum dolor. 4</p>
+                    {% for n in noticias[1:4] %}
+                        <a class="titulo" href="{{ url_for('noticia', id=n['id']) }}">
+                            {{ n['titulo'] }}
+                        </a>
+                        <p class="descricao">
+                            {{ n['descricao'] }}
+                        </p>
+                    {% endfor %}
                 </div>
-            </div>
-            <div class="ver-mais text-center mt-5">
-                <a href="/noticias"><i class="fa-solid fa-arrow-right"></i> Ver mais notícias</a>
-            </div>
+            {% else %}
+                <p class="text-center mt-4">Nenhuma notícia cadastrada.</p>
+            {% endif %}
         </div>
-    </section>
-    {% endblock %}
+
+        <div class="ver-mais text-center mt-5">
+            <a href="/noticias">
+                <i class="fa-solid fa-arrow-right"></i> Ver mais notícias
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+
     {% block scripts %}
         <link rel="stylesheet" href="/static/css/bootstrap.min.css">
         <link rel="stylesheet" href="/static/css/style.min.css">

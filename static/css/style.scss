@@ -3,187 +3,224 @@ $mainColor: #8FC0A9;
 $secondaryColor: #68B0AB;
 $tertiaryColor: #696d7d;
 $fontColor: #000000;
+
 body {
-    background-color: $backgroundColor;
+  background-color: $backgroundColor;
 }
+
 .topo {
-    background-color: $mainColor;
-    padding-top:30px;
-    padding-bottom: 30px;
-    a {
-        text-decoration: none;
-        font-size: 20px;
-        font-weight: 350;
-        color: $fontColor;
-        margin-right: 100px;
+  background-color: $mainColor;
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 350;
+    color: $fontColor;
+    margin-right: 100px;
+  }
+
+  .items {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .pesquisa {
+    display: flex;
+    justify-content: flex-end;
+
+    input {
+      border: none;
+      width: 300px;
+      outline: 0;
+      opacity: 1;
+      height: 35px;
+      border-radius: 10px;
+      padding-left: 10px;
     }
-    .items {
-        display: flex;
-        justify-content: flex-start;
+
+    input::placeholder {
+      font-size: 20px;
+      font-weight: 350;
     }
-    .pesquisa {
-        display: flex;
-        justify-content: flex-end;
-        input {
-            border: none;
-            width: 300px;
-            outline: 0;
-            opacity: 1;
-            height: 35px;
-            border-radius: 10px;
-            padding-left: 10px;    
-        }
-        input::placeholder {
-            font-size: 20px;
-            font-weight: 350;
-        }
-    }
-    .botao {
-        border: none;
-        padding-left: 30px;
-        padding-right: 30px;
-        border-radius: 10px;
-        height: 35px;
-        background-color: transparent;
-    }
+  }
+
+  .botao {
+    border: none;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    height: 35px;
+    background-color: transparent;
+  }
 }
+
 .noticias {
-    a {
-        text-decoration: none;
-        font-size: 35px;
-        color: $mainColor;
-        font-weight: bold;
+  a {
+    text-decoration: none;
+    font-size: 35px;
+    color: $mainColor;
+    font-weight: bold;
+  }
+
+  &-principal {
+    display: flex;
+    flex-direction: column;
+
+    .imagem {
+      border-radius: 20px;
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
     }
-    &-principal {
-        display: flex;
-        flex-direction: column;
-        .imagem {
-            border-radius: 20px;
-        }
-    }
+  }
 }
 
 .noticias-listagem {
-    a {
-        text-decoration: none;
-        font-size: 25px;
-        color: $mainColor;
-        font-weight: bold;
-    }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+
+  a {
+    text-decoration: none;
+    font-size: 25px;
+    color: $mainColor;
+    font-weight: bold;
+  }
+
+  .card-noticia {
+    border-radius: 5px;
+    width: 420px;
+    overflow: hidden;
+
     .imagem-card {
-        width: 100%;
-        border-radius: 10px;
+      width: 100%;
+      height: 250px;        
+      object-fit: cover;    
+      border-radius: 20px;
     }
-    .card-noticia {
-        border-radius: 5px;
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-bottom: 20px;
-        width: 420px;
-        .views{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            p {
-                margin: 0 !important;
-            }
-            .contagem {
-                display: flex;
-                align-items: center;
-                flex-direction: row;
-                p {
-                    margin: 0 !important;
-                }
-                i {
-                    margin-right: 5px;
-                    margin-top: 2px;
-                }
-            }
+
+    .views {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      p {
+        margin: 0 !important;
+      }
+
+      .contagem {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+
+        p {
+          margin: 0 !important;
         }
+
+        i {
+          margin-right: 5px;
+          margin-top: 2px;
+        }
+      }
     }
+  }
 }
 
 .crud {
-    form {
-        width: 50%;
-        display: flex;
-        flex-direction: column;
-    }
-    label {
-        margin-bottom: 10px;
-        margin-top: 10px;
-    }
-    button {
-        width: 80px;
-    }
+  form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  label {
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  button {
+    width: 80px;
+  }
 }
 
 .listagem-noticias {
-    hr {
-        margin-top: 10px;
+  hr {
+    margin-top: 10px;
+  }
+
+  .botao-criar {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .criar {
+    width: fit-content;
+    text-decoration: none;
+    padding: 15px;
+    background-color: $mainColor;
+    color: $fontColor;
+  }
+
+  .lista {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .titulo {
+      p {
+        margin-bottom: 0 !important;
+        font-size: 20px;
+      }
     }
-    .botao-criar {
-        display: flex;
-        justify-content: flex-end;
+
+    .botoes {
+      display: flex;
+      justify-content: flex-end;
+
+      .btn-deletar {
+        border: 0;
+        border-radius: 10px;
+        background-color: rgb(225, 91, 91);
+        padding: 10px;
+      }
+
+      .btn-editar {
+        border: 0;
+        border-radius: 10px;
+        background-color: rgb(146, 223, 154);
+        padding: 10px;
+      }
     }
-    .criar {
-        width: fit-content;
-        text-decoration: none;
-        padding: 15px;
-        background-color: $mainColor;
-        color: $fontColor;
-    }
-    .lista {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .titulo{
-            p {
-                margin-bottom: 0 !important;
-                font-size: 20px;
-            }
-        }
-        .botoes {
-            display: flex;
-            justify-content: flex-end;
-            .btn-deletar{
-                border: 0;
-                border-radius: 10px;
-                background-color: rgb(225, 91, 91);
-                padding: 10px;
-            }
-            .btn-editar{
-                border: 0;
-                border-radius: 10px;
-                background-color: rgb(146, 223, 154);
-                padding: 10px;
-            }
-        }
-    }
+  }
 }
+
 .pagina-noticia {
-    .imagem {
-        width: 100%;
-    }
+  .imagem {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
 }
 
 .comentarios {
-    padding: 30px 0;
+  padding: 30px 0;
 }
 
 .comentario-form {
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .lista-comentarios .comentario {
-    border-radius: 6px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .lista-comentarios .comentario p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
-

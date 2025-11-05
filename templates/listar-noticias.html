@@ -3,20 +3,34 @@
 <section class="listagem-noticias">
     <div class="container">
         <div class="row mt-5">
-            <div class="botao-criar">
-                <a href="/criar-noticia" class="criar"><i class="fa-solid fa-plus"></i> Criar nova notícia</a>
+
+            <!-- Botão para criar nova notícia -->
+            <div class="botao-criar mb-4">
+                <a href="/criar-noticia" class="criar">
+                    <i class="fa-solid fa-plus"></i> Criar nova notícia
+                </a>
             </div>
-            <div class="lista mt-5">
-                <div class="col-6 titulo">
-                    <p>Nome da notícia</p>
-                </div>
-                <div class="col-6 botoes">
-                    <button class="btn-default btn-editar">Editar</button>
-                    <button class="btn-default btn-deletar">Deletar</button>
-                </div>
-                
+
+            <div class="col-12 mb-3">
+                <h2>Notícias Cadastradas</h2>
             </div>
-            <hr>
+
+            {% for noticia in noticias %}
+                <div class="lista mt-3">
+                    <div class="col-6 titulo">
+                        <p>{{ noticia.titulo }}</p>
+                    </div>
+                    <div class="col-6 botoes">
+                        <a href="/editar-noticia/{{ noticia.id }}" class="btn-default btn-editar">Editar</a>
+                        <form action="/deletar-noticia/{{ noticia.id }}" method="POST" style="display:inline;">
+                            <button type="submit" class="btn-default btn-deletar">Deletar</button>
+                        </form>
+                    </div>
+                </div>
+                <hr>
+            {% else %}
+                <p>Nenhuma notícia cadastrada ainda.</p>
+            {% endfor %}
         </div>
     </div>
 </section>
