@@ -20,7 +20,6 @@ class Comentario:
             cursorclass=DictCursor
         )
 
-    # 🔹 Criar comentário
     def criarComentario(self, autor, comentario, id_noticia):
         conn = self.conectar()
         try:
@@ -38,7 +37,6 @@ class Comentario:
         finally:
             conn.close()
 
-    # 🔹 Buscar todos os comentários de uma notícia específica
     def listarPorNoticia(self, id_noticia):
         conn = self.conectar()
         try:
@@ -48,7 +46,6 @@ class Comentario:
         finally:
             conn.close()
 
-    # 🔹 Deletar um comentário
     def deletarComentario(self, id):
         conn = self.conectar()
         try:
@@ -59,7 +56,6 @@ class Comentario:
         finally:
             conn.close()
 
-    # 🔹 Buscar um comentário específico (caso precise editar no futuro)
     def buscarPorId(self, id):
         conn = self.conectar()
         try:
