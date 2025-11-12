@@ -1,4 +1,5 @@
---Noticia
+create database db_noticias;
+use db_noticias;
 
 CREATE TABLE noticia(
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -18,8 +19,3 @@ CREATE TABLE comentario(
     FOREIGN KEY(id_noticia) REFERENCES noticia(id)
 );
 
---ALTER TABLE noticia
---MODIFY views INT DEFAULT 0;
-
---ALTER TABLE noticia
---ADD dataN DATE;
